@@ -1,5 +1,3 @@
-// Edit this file to update the website. All text below is explicitly a placeholder.
-// File links can be relative, e.g. "assets/cv.pdf" or "papers/my-paper.pdf".
 window.academicProfile = {
   draft: false,
   name: "Winnie Wanjiru Njoroge",
@@ -13,8 +11,8 @@ window.academicProfile = {
   fieldsOfInterest: "Behavioural Economics, Experimental Economics, Development Economics, and Labor Economics",
   email: "winnie.njoroge@cerge-ei.cz",
   office: "",
-  cvUrl: "", // Paste your CV URL here, or use a local PDF path such as "assets/cv.pdf".
-  links: [], // e.g. { label: "Curriculum Vitae", url: "assets/cv.pdf" }
+  cvUrl: "", 
+  links: [],
   publications: [
     {
       title: "Your publication title",
