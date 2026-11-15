@@ -9,7 +9,23 @@ const element = (tag, text, className) => {
 function link(label, url) {
   const node = element("a", label);
   node.href = url;
+  if (!url.startsWith("#") && !/^(mailto:|tel:)/i.test(url)) {
+    node.target = "_blank";
+    node.rel = "noopener noreferrer";
+  }
   return node;
+}
+function appendLinkedNames(container, text) {
+  const destinations = {
+    "CERGE-EI": "https://www.cerge-ei.cz/",
+    "Michal Bauer": "https://sites.google.com/view/michal-bauer/home",
+    "Julie Chytilová": "https://www.cerge-ei.cz/cs/researchers-cz/doc-phdr-julie-chytilova-phd",
+    "Jana Cahlíková": "http://janacahlikova.net/",
+    "Edward Miguel": "https://emiguel.econ.berkeley.edu/"
+  };
+  for (const part of text.split(/(CERGE-EI|Michal Bauer|Julie Chytilová|Jana Cahlíková|Edward Miguel)/g)) {
+    container.append(destinations[part] ? link(part, destinations[part]) : document.createTextNode(part));
+  }
 }
 function paperList(target, papers, emptyText) {
   const container = document.getElementById(target);
@@ -21,8 +37,14 @@ function paperList(target, papers, emptyText) {
     const article = element("article", "", "paper");
     const title = element("h3");
     title.append(paper.url ? link(paper.title, paper.url) : document.createTextNode(paper.title));
+    if (paper.status) title.append(element("span", ` (${paper.status})`, "paper-status"));
     article.append(title);
-    if (paper.authors) article.append(element("p", paper.authors, "authors"));
+    if (paper.authors) {
+      const names = paper.authors.trim().replace(/^\((.*)\)$/s, "$1").replace(/^with\s+/i, "");
+      const authors = element("p", "", "authors");
+      appendLinkedNames(authors, `(with ${names})`);
+      article.append(authors);
+    }
     if (paper.venue || paper.year) {
       const venue = element("p", "", "venue");
       if (paper.venue) venue.append(element("em", paper.venue));
@@ -30,9 +52,14 @@ function paperList(target, papers, emptyText) {
       if (paper.year) venue.append(document.createTextNode(paper.year));
       article.append(venue);
     }
-    if (paper.abstract) {
+    if (paper.abstract || target === "working-list") {
       const details = element("details");
-      details.append(element("summary", "Abstract"), element("p", paper.abstract));
+      const summary = element("summary", "Abstract (click to expand)");
+      const abstract = element("span", paper.abstract || "Abstract to be added.", "abstract-text");
+      details.append(summary, abstract);
+      details.addEventListener("toggle", () => {
+        summary.textContent = details.open ? "Abstract:" : "Abstract (click to expand)";
+      });
       article.append(details);
     }
     if (paper.links?.length) {
@@ -45,10 +72,34 @@ function paperList(target, papers, emptyText) {
 }
 document.title = `${profile.name} | Academic homepage`;
 document.getElementById("name").textContent = profile.name;
-document.getElementById("affiliation").textContent = profile.affiliation;
+const affiliation = document.getElementById("affiliation");
+const institution = profile.affiliationLink;
+const institutionStart = institution ? profile.affiliation.indexOf(institution.text) : -1;
+if (institutionStart >= 0) {
+  affiliation.replaceChildren(
+    document.createTextNode(profile.affiliation.slice(0, institutionStart)),
+    link(institution.text, institution.url),
+    document.createTextNode(profile.affiliation.slice(institutionStart + institution.text.length))
+  );
+} else {
+  affiliation.textContent = profile.affiliation;
+}
+const cvLink = document.getElementById("cv-link");
+if (profile.cvUrl) {
+  cvLink.href = profile.cvUrl;
+  cvLink.target = "_blank";
+  cvLink.rel = "noopener noreferrer";
+  cvLink.removeAttribute("aria-disabled");
+  cvLink.removeAttribute("title");
+}
 document.getElementById("draft").hidden = !profile.draft;
 const biography = document.getElementById("biography");
-biography.replaceChildren(...profile.biography.map(paragraph => element("p", paragraph)));
+biography.replaceChildren(...profile.biography.map(text => {
+  const paragraph = element("p");
+  appendLinkedNames(paragraph, text);
+  return paragraph;
+}));
+document.getElementById("fields-of-interest").textContent = profile.fieldsOfInterest || "Add your fields of interest in profile.js.";
 if (profile.portrait) {
   const portrait = document.getElementById("portrait");
   portrait.src = profile.portrait;
@@ -60,13 +111,14 @@ const contacts = document.getElementById("contact-details");
 if (profile.email) {
   const email = element("dd");
   email.append(link(profile.email, `mailto:${profile.email}`));
-  contacts.append(element("dt", "Email"), email);
+  contacts.append(element("dt", "Email:", "email-label"), email);
 }
-if (profile.office) contacts.append(element("dt", "Office"), element("dd", profile.office));
-document.getElementById("contact-placeholder").hidden = Boolean(profile.email || profile.office);
-paperList("publication-list", profile.publications, "Add your publications in profile.js.");
+// Publications temporarily disabled; uncomment with its section in index.html.
+// paperList("publication-list", profile.publications, "Add your publications in profile.js.");
 paperList("working-list", profile.workingPapers, "Add your working papers in profile.js.");
 paperList("progress-list", profile.workInProgress, "Add your ongoing research in profile.js.");
+document.getElementById("teaching-interests").textContent = profile.teachingInterests || "Add your teaching interests in profile.js.";
+if (!profile.teachingInterests) document.getElementById("teaching-interests").classList.add("placeholder");
 for (const course of profile.teaching) {
   const article = element("article", "", "course");
   const heading = element("h3");
@@ -75,5 +127,4 @@ for (const course of profile.teaching) {
   if (course.description) article.append(element("p", course.description));
   document.getElementById("teaching-list").append(article);
 }
-if (!profile.teaching.length) document.getElementById("teaching-list").append(element("p", "Add your courses in profile.js.", "placeholder"));
-document.getElementById("copyright").textContent = `© ${new Date().getFullYear()} ${profile.name}`;
+if (!profile.teaching.length) document.getElementById("teaching-list").append(element("p", "Add your teaching experience in profile.js.", "placeholder"));

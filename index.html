@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Academic homepage — biography, research, and publications.">
-  <title>Your Name | Academic homepage</title>
+  <meta name="description" content="Winnie Wanjiru Njoroge, PhD candidate at CERGE-EI. Research in behavioural, experimental, development, and labor economics.">
+  <title>Winnie Wanjiru Njoroge | Academic homepage</title>
   <link rel="stylesheet" href="styles.css">
   <script src="profile.js" defer></script>
   <script src="site.js" defer></script>
@@ -13,48 +13,54 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="layout">
     <header class="sidebar">
-      <a class="name" href="#bio" id="name">Your Name</a>
-      <p class="affiliation" id="affiliation">Your position and institution</p>
+      <a class="name" href="#bio" id="name">Winnie Wanjiru Njoroge</a>
+      <p class="affiliation" id="affiliation">PhD candidate at CERGE-EI</p>
       <img id="portrait" class="portrait" alt="" hidden>
       <nav aria-label="Sections">
         <a href="#bio">Bio</a>
-        <a href="#contact">Contact</a>
-        <a href="#publications">Publications</a>
+        <a id="cv-link" aria-disabled="true" title="Add your CV link in profile.js">CV</a>
+        <!-- <a href="#publications">Publications</a> -->
         <a href="#working-papers">Working papers</a>
-        <a href="#work-in-progress">Work in progress</a>
+        <a href="#work-in-progress">Work in Progress</a>
         <a href="#teaching">Teaching</a>
       </nav>
-      <p class="sidebar-note">Research · Teaching · Publications</p>
     </header>
     <main id="main">
-      <p class="draft" id="draft">Website draft · Personal details and research entries are placeholders.</p>
+      <p class="draft" id="draft" hidden>Website draft · Personal details and research entries are placeholders.</p>
       <section id="bio" aria-labelledby="bio-title">
         <h1 id="bio-title">Bio</h1>
         <div id="biography"><p>Add your academic biography and research interests here.</p></div>
+        <div class="bio-fields">
+          <h3>Fields of interest</h3>
+          <p id="fields-of-interest"></p>
+        </div>
         <p class="profile-links" id="profile-links"></p>
-      </section>
-      <section id="contact" aria-labelledby="contact-title">
-        <h2 id="contact-title">Contact</h2>
         <dl id="contact-details"></dl>
-        <p id="contact-placeholder">Add your institutional email and office details.</p>
       </section>
+      <!-- Publications temporarily disabled.
       <section id="publications" aria-labelledby="publications-title">
         <h2 id="publications-title">Publications</h2>
         <div id="publication-list"></div>
       </section>
+      -->
       <section id="working-papers" aria-labelledby="working-title">
         <h2 id="working-title">Working papers</h2>
         <div id="working-list"></div>
       </section>
       <section id="work-in-progress" aria-labelledby="progress-title">
-        <h2 id="progress-title">Work in progress</h2>
+        <h2 id="progress-title">Work in Progress</h2>
         <div id="progress-list"></div>
       </section>
       <section id="teaching" aria-labelledby="teaching-title">
         <h2 id="teaching-title">Teaching</h2>
-        <div id="teaching-list"></div>
+        <div class="teaching-subsection">
+          <div id="teaching-list"></div>
+        </div>
+        <div class="teaching-subsection">
+          <h3>Teaching interests</h3>
+          <p id="teaching-interests"></p>
+        </div>
       </section>
-      <footer><a href="#bio">Back to top ↑</a><span id="copyright"></span></footer>
       <noscript><p>Enable JavaScript to display the profile and research entries.</p></noscript>
     </main>
   </div>
