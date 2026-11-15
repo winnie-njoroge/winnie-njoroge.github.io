@@ -5,7 +5,7 @@ window.academicProfile = {
   affiliationLink: { text: "CERGE-EI", url: "https://www.cerge-ei.cz/" },
   portrait: "photos/portrait.jpg",
   biography: [
-    "Welcome to my website! I am a PhD candidate at CERGE-EI (a joint workplace of Charles University, Prague and Czech Academy of Sciences). My primary advisor is Michal Bauer. In Spring 2026, I was a Visiting Student Researcher in the Department of Economics at UC Berkeley, where I was hosted by Edward Miguel. I also visited the Economics Department at Princeton University.",
+    "Welcome to my website! I am a PhD candidate at CERGE-EI (a joint workplace of Charles University, Prague and Czech Academy of Sciences). My primary advisor is Michal Bauer. In Spring 2026, I was a Visiting Student Researcher in the Department of Economics at UC Berkeley, hosted by Edward Miguel. I also visited the Economics Department at Princeton University.",
     "I am an applied microeconomist working at the intersection of behavioural economics, experimental economics, and development economics."
   ],
   fieldsOfInterest: "Behavioural Economics, Experimental Economics, Development Economics, and Labor Economics",
