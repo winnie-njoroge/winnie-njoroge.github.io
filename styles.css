@@ -24,7 +24,7 @@ p:last-child { margin-bottom: 0; }
 .profile-links { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 15px; margin-top: 22px; }
 .profile-links:empty { display: none; }
 .bio-fields { margin-top: 22px; font: 16px/1.5 Arial, Helvetica, sans-serif; color: #777; }
-.bio-fields h3 { margin: 0 0 8px; font-size: 16px; font-weight: 700; color: #4d4d4d; }
+.bio-fields h3 { margin: 0 0 8px; font: 700 19px/1.25 Arial, Helvetica, sans-serif; color: #4d4d4d; }
 .bio-fields p { margin: 0; }
 dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 5px 16px; }
 dt { color: #64696f; }
@@ -57,11 +57,11 @@ details p { margin: 10px 0 0; font-size: 15px; line-height: 1.75; }
 .paper .abstract-text { font-size: 16px; line-height: 1.5; color: #777; }
 .placeholder { color: #8b9096; font-style: italic; font-size: 15px; }
 .teaching-subsection { margin-top: 20px; --text: #777; --muted: #777; color: #777; font: 16px/1.6 Arial, Helvetica, sans-serif; }
-.teaching-subsection > h3 { font: 700 16px/1.25 Arial, Helvetica, sans-serif; margin: 0 0 7px; color: #4d4d4d; }
+.teaching-subsection > h3 { font: 700 19px/1.25 Arial, Helvetica, sans-serif; margin: 0 0 7px; color: #4d4d4d; }
 .teaching-subsection > p { margin: 0; font-size: 16px; }
 .course { margin-bottom: 15px; }
 .course:last-child { margin-bottom: 0; }
-.course h3 { font: 700 16px/1.25 Arial, Helvetica, sans-serif; margin: 0 0 10px; color: #4d4d4d; }
+.course h3 { font: 700 19px/1.25 Arial, Helvetica, sans-serif; margin: 0 0 10px; color: #4d4d4d; }
 .course p { font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.5; margin: 0; color: var(--muted); }
 footer { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; padding-top: 25px; color: #969ba0; font: 12px/1.7 Arial, Helvetica, sans-serif; }
 .skip-link { position: absolute; top: -80px; left: 16px; background: white; padding: 8px 15px; z-index: 2; }
