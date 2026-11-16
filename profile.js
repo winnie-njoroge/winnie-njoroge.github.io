@@ -46,7 +46,7 @@ window.academicProfile = {
     },
     {
       title: "Signaling Group Affiliation",
-      status: "Early Stage",
+      status: "Early stage",
       authors: "Jana Cahlíková", 
       url: "", 
       year: "",
