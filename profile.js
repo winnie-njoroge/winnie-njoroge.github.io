@@ -19,38 +19,38 @@ window.academicProfile = {
       authors: "Coauthor names",
       venue: "Journal name",
       year: "Year",
-      url: "", // Paper or journal URL
+      url: "", 
       abstract: "Replace this example with your paper's abstract. Readers can expand or collapse it using the Abstract link.",
-      links: [] // e.g. { label: "Data and code", url: "https://..." }
+      links: [] 
     }
   ],
   workingPapers: [
     {
-      title: "Moral Teachers: Religious Leaders and the Transmission of Tolerance and Parochialism", // The clickable text visitors see.
-      url: "https://drive.google.com/file/d/1gQ6-77UgLfNLBOKkykytKVH_S4DTQ9kv/view", // Paste the paper URL here; the title will link to it.
-      authors: "Michal Bauer, Julie Chytilová, and Eric Ochieng", // Replace with actual names; the website adds "(with ...)" automatically. Use "" if sole-authored.
+      title: "Moral Teachers: Religious Leaders and the Transmission of Tolerance and Parochialism",
+      url: "https://drive.google.com/file/d/1gQ6-77UgLfNLBOKkykytKVH_S4DTQ9kv/view", 
+      authors: "Michal Bauer, Julie Chytilová, and Eric Ochieng",
       venue: "",
       year: "",
-      abstract: `Communities that share the same faith often differ sharply in how they treat religious out-groups. In this paper, we study the role of local religious leaders who are among the most trusted figures in many societies, often described as "moral teachers". We combine incentivized social-preference measures from pastors and congregants in 200 Kenyan Christian churches, text analysis of 2,900 sermons, and experiments that vary congregants’ exposure to leaders' views. Leaders differ markedly: about half treat recipients equally regardless of their religion, while the other half systematically discriminate against the non-religious and Muslims. A similar pattern appears in what is preached—pro-sociality is a common, positively framed theme, while negative messaging about out-groups is concentrated in a subset of churches. Congregants’ pro-sociality and parochialism are robustly linked to their own pastor's preferences, especially among regular church attenders. In two experiments, we show that making a leader's preaching salient, or revealing a leader's choice, shifts congregants’ behavior toward the leader's views. Together, the results suggest that heterogeneity among leaders spills over, shaping the moral character of the communities they lead, in line with cultural transmission models.`, // Hidden until expanded.
+      abstract: `Communities that share the same faith often differ sharply in how they treat religious out-groups. In this paper, we study the role of local religious leaders who are among the most trusted figures in many societies, often described as "moral teachers". We combine incentivized social-preference measures from pastors and congregants in 200 Kenyan Christian churches, text analysis of 2,900 sermons, and experiments that vary congregants’ exposure to leaders' views. Leaders differ markedly: about half treat recipients equally regardless of their religion, while the other half systematically discriminate against the non-religious and Muslims. A similar pattern appears in what is preached—pro-sociality is a common, positively framed theme, while negative messaging about out-groups is concentrated in a subset of churches. Congregants’ pro-sociality and parochialism are robustly linked to their own pastor's preferences, especially among regular church attenders. In two experiments, we show that making a leader's preaching salient, or revealing a leader's choice, shifts congregants’ behavior toward the leader's views. Together, the results suggest that heterogeneity among leaders spills over, shaping the moral character of the communities they lead, in line with cultural transmission models.`, 
       links: []
     }
   ],
   workInProgress: [
     {
       title: "Expected Discrimination and Job Seeking Behavior: Experimental Evidence from Kenya", // The clickable text visitors see.
-      authors: "", // Add coauthor names here; displayed automatically as "(with ...)".
-      url: "", // Paste the paper URL here; the title will link to it.
+      authors: "", 
+      url: "", 
       year: "",
-      abstract: `Although previous research has established the existence of discrimination in the labor market, little is known about how job seekers from disadvantaged groups behave when they anticipate discrimination in the labor market. I conduct a natural field experiment in Kenya, a developing country with a history of deep ethnic rivalry between the Kikuyu (dominant) ethnic group and the Luo (disadvantaged) ethnic group, to investigate: (i) whether anticipated ethnic discrimination deters job seekers from applying for jobs and (ii) the quality of job seekers who are most responsive to anticipated ethnic discrimination in the hiring process. I randomly assign job seekers to one of three treatment groups (Active Control, Equal, or Equal + Blind), where I exogenously vary signals about equal treatment in the hiring process, and invite them to apply. I find that signaling equal treatment in the hiring process significantly increases job applications from the disadvantaged ethnic group but has no significant effect on average application rate from the dominant ethnic group. Using HR managers' scores as a proxy for quality, I find that the effect is concentrated among the high-quality job seekers. These findings suggest that job seekers’ responses to expected discrimination in the hiring process partially explain the observed ethnic inequalities in the labor market.`, // Hidden until expanded.
+      abstract: `Although previous research has established the existence of discrimination in the labor market, little is known about how job seekers from disadvantaged groups behave when they anticipate discrimination in the labor market. I conduct a natural field experiment in Kenya, a developing country with a history of deep ethnic rivalry between the Kikuyu (dominant) ethnic group and the Luo (disadvantaged) ethnic group, to investigate: (i) whether anticipated ethnic discrimination deters job seekers from applying for jobs and (ii) the quality of job seekers who are most responsive to anticipated ethnic discrimination in the hiring process. I randomly assign job seekers to one of three treatment groups (Active Control, Equal, or Equal + Blind), where I exogenously vary signals about equal treatment in the hiring process, and invite them to apply. Signaling equal treatment in the hiring process significantly increases job applications from the disadvantaged ethnic group but has no significant effect on average application rate from the dominant ethnic group. Using HR managers' scores as a proxy for quality, I find that the effect is concentrated among the high-quality job seekers. These findings suggest that job seekers’ responses to expected discrimination in the hiring process partially explain the observed ethnic inequalities in the labor market.`, 
       links: []
     },
     {
-      title: "Signaling Group Affiliation", // The clickable text visitors see.
+      title: "Signaling Group Affiliation",
       status: "Early Stage",
-      authors: "Jana Cahlíková", // Add coauthor names here; displayed automatically as "(with ...)".
-      url: "", // Paste the paper URL here; the title will link to it.
+      authors: "Jana Cahlíková", 
+      url: "", 
       year: "",
-      abstract: ``, // Hidden until expanded.
+      abstract: ``,
       links: []
     }
 
@@ -58,9 +58,9 @@ window.academicProfile = {
   teaching: [
   {
     title: "Teaching Assistant, Development Economics (PhD course), CERGE-EI (Fall 2023)",
-    description: "Assisted Professor Andreas Menzel in setting replication assignment, grading assignments, and providing individualized feedback to students.", // Edit this to describe your role.
+    description: "Assisted Professor Andreas Menzel in setting replication assignment, grading assignments, and providing individualized feedback to students.", 
     url: ""
   }
 ],
-  teachingInterests: "Behavioral and Experimental Economics, Development Economics, Microeconomics" // Write the subjects you would like to teach here.
+  teachingInterests: "Behavioral and Experimental Economics, Development Economics, Microeconomics" 
 };
